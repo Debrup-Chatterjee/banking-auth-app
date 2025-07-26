@@ -51,7 +51,16 @@ app.post('/api/checkUser', async (req, res) => {
   }
 });
 
-
+// 🚀 NEW: Get login history for an email
+app.get('/api/logins/:email', async (req, res) => {
+  try {
+    const email = req.params.email;
+    const logs = await LoginLog.find({ email }).sort({ timestamp: -1 });
+    res.status(200).json(logs);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching login logs', error });
+  }
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
