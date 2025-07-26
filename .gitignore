@@ -1,0 +1,32 @@
+# =============================
+# React Frontend Ignored Files
+# =============================
+
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# testing
+/frontend/coverage
+
+# production build
+/frontend/build
+
+# environment files
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+# misc
+/frontend/.DS_Store
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# =============================
+# Node Backend Ignored Files
+# =============================
+
+/backend/node_modules
