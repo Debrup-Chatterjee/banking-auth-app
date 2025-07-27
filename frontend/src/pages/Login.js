@@ -47,7 +47,14 @@ function Login() {
       ip: ipRes.data.ip,
       city: ipRes.data.city,
       region: ipRes.data.region,
-      deviceInfo: navigator.userAgent,
+      country: ipRes.data.country_name, // ✅ new
+      timezone: ipRes.data.timezone,
+      locationCoordinates: {
+        lat: ipRes.data.latitude,
+        lon: ipRes.data.longitude
+      },
+      userAgent: navigator.userAgent, // ✅ renamed from deviceInfo
+      fingerprint: btoa(navigator.userAgent + ipRes.data.ip) // basic fingerprint
     };
   };
 

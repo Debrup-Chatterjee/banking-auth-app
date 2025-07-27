@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  email: String,
-  ip: String,
-  city: String,
-  region: String,
-  deviceInfo: String,
+  email: { type: String, required: true, unique: true },
   createdAt: { type: Date, default: Date.now }
 });
 
